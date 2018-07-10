@@ -67,4 +67,18 @@ class PhotoTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+          if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            let photoToDelete = photos[indexPath.row]
+            context.delete(photoToDelete)
+            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+            getPhotos()
+          }
+        }
+    }
 }
