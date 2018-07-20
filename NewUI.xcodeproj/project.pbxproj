@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		188888C021019397007184F7 /* ImageUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188888BF21019397007184F7 /* ImageUtilities.swift */; };
 		50F464B020EBC0ED006A815F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F464AF20EBC0ED006A815F /* AppDelegate.swift */; };
 		50F464B520EBC0ED006A815F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F464B320EBC0ED006A815F /* Main.storyboard */; };
 		50F464B820EBC0ED006A815F /* NewUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50F464B620EBC0ED006A815F /* NewUI.xcdatamodeld */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		188888BF21019397007184F7 /* ImageUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtilities.swift; sourceTree = "<group>"; };
 		50F464AC20EBC0ED006A815F /* NewUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F464AF20EBC0ED006A815F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50F464B420EBC0ED006A815F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				50F464BB20EBC0EE006A815F /* LaunchScreen.storyboard */,
 				50F464BE20EBC0EE006A815F /* Info.plist */,
 				50F464B620EBC0ED006A815F /* NewUI.xcdatamodeld */,
+				188888BF21019397007184F7 /* ImageUtilities.swift */,
 			);
 			path = NewUI;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				50F464C520EBC541006A815F /* AddPhotoViewController.swift in Sources */,
 				50F464C720EBD740006A815F /* PhotoTableViewController.swift in Sources */,
 				50F464CB20ED6C51006A815F /* PhotoDetailViewController.swift in Sources */,
+				188888C021019397007184F7 /* ImageUtilities.swift in Sources */,
 				50F464B820EBC0ED006A815F /* NewUI.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +297,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6Y843UY4KG;
+				DEVELOPMENT_TEAM = 2RBUA49PW7;
 				INFOPLIST_FILE = NewUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -311,7 +315,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6Y843UY4KG;
+				DEVELOPMENT_TEAM = 2RBUA49PW7;
 				INFOPLIST_FILE = NewUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -24,7 +24,9 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            newImageView.image = selectedImage
+            //Since the phone can be held in any orientation when you take the picture (sideways, upside down, etc), we have to rotate the photo to make sure it's upright:
+            let fixedImage = ImageUtilities.fixImageOrientation(imageSource: selectedImage)
+            newImageView.image = fixedImage
         }
         
         imagePicker.dismiss(animated: true, completion: nil)
