@@ -52,8 +52,9 @@ class PhotoTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        
+        //Create a reusable cell 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath) as UITableViewCell
+
         let cellPhoto = photos[indexPath.row]
             
         cell.textLabel?.text = cellPhoto.caption
