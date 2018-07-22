@@ -13,7 +13,7 @@ class PhotoDetailViewController: UIViewController {
     @IBOutlet weak var photoDetail: UIImageView!
     @IBOutlet weak var emojiLabel: UILabel!
     
-    var photo : Photos?
+    var photo : Photo?
     
     override func viewDidLoad() {
         super.viewDidLoad()

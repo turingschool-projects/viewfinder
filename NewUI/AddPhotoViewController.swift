@@ -45,7 +45,7 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func savePhotoTapped(_ sender: UIButton) {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
-            let photoToSave = Photos(entity: Photos.entity(), insertInto: context)
+            let photoToSave = Photo(entity: Photo.entity(), insertInto: context)
             photoToSave.caption = captionText.text
             photoToSave.emojiIcon = emojiIcon.text
             

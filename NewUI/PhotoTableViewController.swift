@@ -10,7 +10,7 @@ import UIKit
 
 class PhotoTableViewController: UITableViewController {
 
-    var photos : [Photos] = []
+    var photos : [Photo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class PhotoTableViewController: UITableViewController {
     func getPhotos() {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
-            if let coreDataPhotos = try? context.fetch(Photos.fetchRequest()) as? [Photos] {
+            if let coreDataPhotos = try? context.fetch(Photo.fetchRequest()) as? [Photo] {
                 if let unwrappedPhotos = coreDataPhotos {
                     photos = unwrappedPhotos
                     tableView.reloadData()
@@ -40,7 +40,7 @@ class PhotoTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "moveToDetail" {
             if let photoDetailView = segue.destination as? PhotoDetailViewController {
-                if let photoToSend = sender as? Photos {
+                if let photoToSend = sender as? Photo {
                     photoDetailView.photo = photoToSend
                 }
             }
@@ -60,7 +60,7 @@ class PhotoTableViewController: UITableViewController {
         
         if let cellPhotoImageData = cellPhoto.imageData {
             if let cellPhotoImage = UIImage(data: cellPhotoImageData) {
-                cell.imageView?.image = cellPhotoImage
+                cell.imageView?.image = cellPhotoImage.createThumbnail()
             }
         }
         

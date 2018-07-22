@@ -10,6 +10,8 @@ import UIKit
 
 class ImageUtilities {
     
+
+    
     public static func fixImageOrientation(imageSource : UIImage, maxResolution : CGFloat = 320) -> UIImage? {
         
         guard let imgRef = imageSource.cgImage else {
@@ -101,4 +103,28 @@ class ImageUtilities {
 
 
 
+}
+
+extension UIImage {
+    
+    
+    func createThumbnail() -> UIImage{
+        let ratio = self.size.width / self.size.height
+        return self.scaleImage(toSize: CGSize(width: 100, height: 100 / ratio))!
+    }
+    
+    func scaleImage(toSize newSize: CGSize) -> UIImage? {
+        let newRect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height).integral
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
+        if let context = UIGraphicsGetCurrentContext() {
+            context.interpolationQuality = .high
+            let flipVertical = CGAffineTransform(a: 1, b: 0, c: 0, d: -1, tx: 0, ty: newSize.height)
+            context.concatenate(flipVertical)
+            context.draw(self.cgImage!, in: newRect)
+            let newImage = UIImage(cgImage: context.makeImage()!)
+            UIGraphicsEndImageContext()
+            return newImage
+        }
+        return nil
+    }
 }
